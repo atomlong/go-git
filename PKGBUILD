@@ -13,7 +13,6 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgname=go-git
-epoch=1
 pkgver=go1.15beta1.r138.gba9e1088997
 pkgrel=1
 pkgrepo=go
@@ -32,6 +31,10 @@ export GOOS=linux
 case "$CARCH" in
   x86_64) export GOARCH=amd64 ;;
   i686) export GOARCH=386 GO386=387 ;;
+  arm) export GOARCH=arm GOARM=5 ;;
+  armv6h) export GOARCH=arm GOARM=6 ;;
+  armv7h) export GOARCH=arm GOARM=7 ;;
+  aarch64) export GOARCH=arm64 ;;
 esac
 export GOROOT_FINAL=/usr/lib/go
 export GOROOT_BOOTSTRAP=/usr/lib/go
