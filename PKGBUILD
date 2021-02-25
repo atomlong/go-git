@@ -49,6 +49,8 @@ build() {
   export GOBIN="$GOROOT/bin"
   export GOPATH="$srcdir/"
 
+  echo "$pkgver" > ${GOROOT}/VERSION
+  
   cd $pkgrepo/src
   ./make.bash --no-clean
 }
